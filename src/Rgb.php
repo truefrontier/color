@@ -71,6 +71,11 @@ class Rgb implements Color
         return new self($red, $green, $blue);
     }
 
+    public function luminance(): float
+    {
+        return Convert::rgbValueToLuminance($this->red, $this->green, $this->blue);
+    }
+
     public function toHex(): Hex
     {
         return new Hex(

@@ -77,6 +77,12 @@ class Hex implements Color
         return $rgb->toHex();
     }
 
+    public function luminance(): float
+    {
+        $rgb = $this->toRgb();
+        return Convert::rgbValueToLuminance($rgb->red(), $rgb->green(), $rgb->blue());
+    }
+
     public function toHex(): self
     {
         return new self($this->red, $this->green, $this->blue);

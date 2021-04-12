@@ -14,6 +14,8 @@ interface Color
 
     public function mix($mixColor, $weight = 0.5);
 
+    public function luminance(): float;
+
     public function toHex(): Hex;
 
     public function toHsl(): Hsl;
