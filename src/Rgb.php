@@ -162,7 +162,7 @@ class Rgb implements Color
         return $palette;
     }
 
-    public function toColorWheel()
+    public function toColorWheel(): array
     {
         $palette = [];
         $hsl = $this->toHsl();
@@ -179,7 +179,7 @@ class Rgb implements Color
         return $palette;
     }
 
-    public function toColorName()
+    public function toColorName(): string
     {
         $hsl = $this->toHsl();
         return Convert::hueToColorName($hsl->hue());
