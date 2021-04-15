@@ -138,7 +138,7 @@ class Convert
         return [$hue, $saturation, $lightness];
     }
 
-    public function hueToColorName(float $hue): string
+    public static function hueToColorName(float $hue): string
     {
         if ($hue >= 345 || $hue < 15) {
             return 'red';
