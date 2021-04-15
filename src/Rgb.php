@@ -162,6 +162,12 @@ class Rgb implements Color
         return $palette;
     }
 
+    public function toColorName()
+    {
+        $hsl = $this->toHsl();
+        return Convert::hueToColorName($hsl->hue());
+    }
+
     public function __toString(): string
     {
         return "rgb({$this->red},{$this->green},{$this->blue})";

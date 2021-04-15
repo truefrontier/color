@@ -169,6 +169,12 @@ class Hex implements Color
         return $palette;
     }
 
+    public function toColorName()
+    {
+        $hsl = $this->toHsl();
+        return Convert::hueToColorName($hsl->hue());
+    }
+
     public function __toString(): string
     {
         return "#{$this->red}{$this->green}{$this->blue}";

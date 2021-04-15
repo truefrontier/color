@@ -43,5 +43,7 @@ interface Color
         ]
     ): array;
 
+    public function toColorName(): string;
+
     public function __toString(): string;
 }

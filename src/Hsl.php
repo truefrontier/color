@@ -162,6 +162,11 @@ class Hsl implements Color
         return $palette;
     }
 
+    public function toColorName()
+    {
+        return Convert::hueToColorName($this->hue);
+    }
+
     public function __toString(): string
     {
         $hue = round($this->hue);
