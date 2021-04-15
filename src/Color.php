@@ -43,6 +43,8 @@ interface Color
         ]
     ): array;
 
+    public function toColorWheel(): array;
+
     public function toColorName(): string;
 
     public function __toString(): string;

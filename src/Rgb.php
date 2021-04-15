@@ -162,6 +162,23 @@ class Rgb implements Color
         return $palette;
     }
 
+    public function toColorWheel()
+    {
+        $palette = [];
+        $hsl = $this->toHsl();
+        for ($deg = 0; $deg < 360; $deg += 30) {
+            $newHue = $hsl->hue() + $deg;
+            if ($newHue > 360) {
+                $newHue -= 360;
+            }
+            $colorName = Convert::hueToColorName($newHue);
+            $wheelColor = new Hsl($newHue, $hsl->saturation(), $hsl->lightness());
+            $palette[$colorName] = $wheelColor->toRgb();
+        }
+
+        return $palette;
+    }
+
     public function toColorName()
     {
         $hsl = $this->toHsl();
